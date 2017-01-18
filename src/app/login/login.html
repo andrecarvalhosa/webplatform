@@ -1,0 +1,25 @@
+<div class="section no-pad-bot" id="index-banner">
+  <div class="row">
+    <br><br>
+    <div class="col l4 offset-l3 m10 s10">
+      <a [routerLink]="['../Index']" class="waves-effect waves-light btn-flat" id="back-btn"><i class="material-icons left">chevron_left</i>Regressar à página inicial</a>
+    </div>
+    <div class="col l4 offset-l4 m10 offset-m1 s10 offset-s1">
+      <h3 class="green-txt">Iniciar sessão</h3>
+      <form (submit)="login()">
+        <div class="form-group input-field">
+          <label for="email">Email</label>
+          <input id="email" type="text" class="form-control" name="email" [(ngModel)]="email">
+        </div>
+        <div class="form-group input-field">
+          <label for="pass">Password</label>
+          <input id="pass" type="password" class="form-control" name="password" [(ngModel)]="password">
+        </div>
+
+        <button id="login-action" type="submit" class="btn waves-effect waves-light btn-lg primary-hvr">Login</button>
+      </form>
+
+      <p>Não tem uma conta? <a [routerLink]="['../Signup']">Registe-se aqui</a></p>
+    </div>
+  </div>
+</div>

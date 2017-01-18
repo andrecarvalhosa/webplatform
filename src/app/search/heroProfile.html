@@ -1,0 +1,94 @@
+<header>
+  <div class="navbar-fixed">
+    <nav class="primary-bg" role="navigation">
+      <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo"><img id="navbar-logo" src="../../assets/img/logo_white.png" /></a>
+        <ul class="right hide-on-med-and-down">
+          <li><a [routerLink]="['../Profile']"><i class="material-icons right">account_circle</i>A minha conta</a></li>
+          <li class="active"><a [routerLink]="['../Search']"><i class="material-icons right">search</i>Pesquisa</a></li>
+          <li><a href="/"><i class="material-icons right">exit_to_app</i>Terminar sessão</a></li>
+        </ul>
+
+        <ul id="nav-mobile" class="side-nav">
+          <li><a [routerLink]="['../Profile']">A minha conta</a></li>
+          <li class="active"><a [routerLink]="['../Search']">Pesquisa</a></li>
+          <li><a href="/">Terminar sessão</a></li>
+        </ul>
+        <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<div id="perfil" class="col s12">
+  <div class="container">
+    <div class="row first-row">
+      <div class="col s12 m6 l4">
+        <div class="card">
+          <div class="card-image">
+            <img src="../../assets/img/profile/{{profileImage}}" class="profile-pic" alt="Imagem de perfil do utilizador">
+            <span id="profile-username" class="card-title">{{username}}<i class="material-icons right verified-acc-icon" *ngIf="verified_user == 'verified_user'">verified_user</i></span>
+          </div>
+          <div class="card-content" style="line-height: 2em;">
+              <p>
+              <strong class="dark-gray-txt"><i class="material-icons left pers-info-icons">accessible</i> </strong>{{accessible}}<br>
+              <!-- <strong class="dark-gray-txt"><i class="material-icons left pers-info-icons">today</i> </strong>{{age}}<br> -->
+              <strong class="dark-gray-txt"><i class="material-icons left pers-info-icons">place</i> </strong>{{place}}<br>
+              <strong class="dark-gray-txt"><i class="material-icons left pers-info-icons">work</i> </strong>{{work}}<br>
+              <strong class="dark-gray-txt"><i class="material-icons left pers-info-icons">mail</i> </strong>{{mail}}
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col s12 m6 l8">
+        <div class="card light-gray-bg">
+          <div class="card-content dark-gray-txt">
+            <div class="card-title"><h4 class="tertiary-txt profile-title"><strong>Resumo</strong></h4></div>
+            <pre>
+{{about_me}}
+          </pre>
+          </div>
+        </div>
+      </div>
+      <div class="col s12 m6 l8 first-row">
+        <div class="card light-gray-bg">
+          <div class="card-content dark-gray-txt">
+            <div class="card-title"><h4 class="tertiary-txt profile-title"><strong>Competências</strong></h4></div>
+              <div class="chip" *ngFor="let skill of skills">
+              {{ skill.tag }}
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="page-footer">
+  <div class="container">
+    <div class="row">
+      <div class="col l6 s12">
+        <h5 class="white-text">inclusivIN</h5>
+        <p class="grey-text text-lighten-4">Uma plataforma de emprego para pessoas com deficiência</p>
+      </div>
+      <div class="col l3 s12">
+        <h5 class="white-text">Mapa do site</h5>
+        <ul>
+          <li><a class="white-text" href="#">Perfil</a></li>
+          <li><a class="white-text" href="#">Contactos</a></li>
+          <li><a class="white-text" href="#">Candidaturas</a></li>
+          <li><a class="white-text" href="#">Mensagens</a></li>
+          <li><a class="white-text" href="#">Pesquisa</a></li>
+        </ul>
+      </div>
+      <div class="col l3 s12">
+        <h5 class="white-text">Mais informações</h5>
+        <ul>
+          <li><a class="white-text" href="#">Sobre a plataforma</a></li>
+          <li><a class="white-text" href="#">Como contribuir</a></li>
+          <li><a class="white-text" href="#">Ajuda</a></li>
+          <li><a class="white-text" href="#">Dê-nos o seu feedback!</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>

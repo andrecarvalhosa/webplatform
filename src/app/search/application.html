@@ -1,0 +1,72 @@
+<div class="page-flexbox-wrapper">
+  <header>
+    <div class="navbar-fixed">
+      <nav class="primary-bg" role="navigation">
+        <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo"><img id="navbar-logo" src="../../assets/img/logo_white.png" /></a>
+          <ul class="right hide-on-med-and-down">
+            <li><a [routerLink]="['../Profile']"><i class="material-icons right">account_circle</i>A minha conta</a></li>
+            <li class="active"><a [routerLink]="['../Search']"><i class="material-icons right">search</i>Pesquisa</a></li>
+            <li><a href="/"><i class="material-icons right">exit_to_app</i>Terminar sessão</a></li>
+          </ul>
+
+          <ul id="nav-mobile" class="side-nav">
+            <li><a [routerLink]="['../Profile']">A minha conta</a></li>
+            <li class="active"><a [routerLink]="['../Search']">Pesquisa</a></li>
+            <li><a href="/">Terminar sessão</a></li>
+          </ul>
+          <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <div class="row">
+        <div class="col s12">
+          <img src="../../assets/img/organization.png" alt="Logótipo da organização. Clique nele para abrir a página de perfil dessa organização." class="application-img" />
+          <h3>{{opportunity.title}}</h3>
+          <h5><a href="#" title="Abrir página de perfil da organização">{{opportunity.company}}</a> - {{opportunity.location}}</h5>
+          <ul>
+            <li class="tertiary-txt" style="margin-bottom: 7px;"><strong>Número de vagas:</strong> {{opportunity.amountNeeded}}</li>
+            <li class="tertiary-txt" style="margin-bottom: 7px;"><strong>Habilitações mínimas:</strong> {{opportunity.qualifications}}</li>
+            <li class="tertiary-txt" style="margin-bottom: 7px;"><strong>Competências necessárias:</strong> {{opportunity.skills}}</li>
+            <li class="tertiary-txt" style="margin-bottom: 7px;"><strong>Benefícios:</strong> {{opportunity.benefits}}</li>
+            <li class="primary-txt" style="margin-bottom: 7px;"><strong>Data limite:</strong> {{opportunity.date}}</li>
+          </ul>
+          <p>{{opportunity.description}}</p><br>
+          <hr>
+          <h5 class="primary-txt" style="padding-top:10px;">{{opportunity.motivationLetter}}</h5>
+          <form (submit)="applyToJob()">
+            <textarea id="textarea1" class="materialize-textarea"></textarea>
+            <label for="textarea1">Escreva no campo acima o que lhe é solicitado</label>
+            <button class="btn-large primary-hvr">Submeter</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+
+<footer class="page-footer">
+  <div class="container">
+    <div class="row">
+      <div class="col l2">
+        <img id="footer-logo" src="assets/img/transp-white.png" alt="Logótipo da plataforma" longdesc="O logótipo é constituído por 9 círculos de tamanhos diferentes mas com a mesma cor. Alguns encontram-se conectados por linhas, num padrão aparentemente aleatório. No centro está um décimo círculo, significativamente maior do que os outros mas também com conexões a outros círculos, com as letras 'IN' inscritas." />
+      </div>
+      <div class="col l5">
+        <h5 id="footer-title" class="white-text">inclusivIN</h5>
+        <p id="footer-description" class="grey-text text-lighten-4">Uma plataforma de emprego para pessoas com deficiência</p>
+        <span id="footer-btn" class="btn tertiary-hvr z-depth-0" [routerLink]="['MoreInfo']">Saber mais</span>
+      </div>
+      <div class="col l4 offset-l1">
+        <h5 class="secondary-txt">Mais informações</h5>
+        <ul id="footer-list">
+          <li><a class="secondary-txt ft-on-hvr" [routerLink]="['Benefits']">Vantagens de contratação</a></li>
+          <li><a class="secondary-txt ft-on-hvr" href="mailto:inescvpintocardoso@gmail.com">Valide a sua conta</a></li>
+          <li><a class="secondary-txt ft-on-hvr" href="mailto:inescvpintocardoso@gmail.com">Dê-nos o seu feedback!</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>

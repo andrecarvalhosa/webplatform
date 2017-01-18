@@ -1,0 +1,185 @@
+<div class="page-flexbox-wrapper">
+  <header>
+    <div class="navbar-fixed">
+      <nav class="primary-bg" role="navigation">
+        <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo"><img id="navbar-logo" src="../../assets/img/logo_white.png" /></a>
+          <ul class="right hide-on-med-and-down">
+            <li><a [routerLink]="['../Profile']"><i class="material-icons right">account_circle</i>A minha conta</a></li>
+            <li class="active"><a [routerLink]="['../Search']"><i class="material-icons right">search</i>Pesquisa</a></li>
+            <li><a href="/"><i class="material-icons right">exit_to_app</i>Terminar sessão</a></li>
+          </ul>
+
+          <ul id="nav-mobile" class="side-nav">
+            <li><a [routerLink]="['../Profile']">A minha conta</a></li>
+            <li class="active"><a [routerLink]="['../Search']">Pesquisa</a></li>
+            <li><a href="/">Terminar sessão</a></li>
+          </ul>
+          <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <div class="row">
+        <div class="col s12">
+          <!-- <h3>Pesquisa</h3> -->
+          <div class="container">
+            <div class="section">
+              <div class="row">
+                <div class="col s12 m4">
+                  <div class="icon-block" [ngClass]="{'active-search-target': heroSelected }" (click)="heroSelected = true; orgSelected = false; jobSelected = false;">
+                    <h1 class="center primary-txt"><i class="material-icons">account_circle</i></h1>
+                    <h5 class="center">Pesquisar indivíduos</h5>
+                  </div>
+                </div>
+
+                <div class="col s12 m4">
+                  <div class="icon-block" [ngClass]="{'active-search-target': orgSelected }" (click)="heroSelected = false; orgSelected = true; jobSelected = false;">
+                    <h1 class="center primary-txt"><i class="material-icons">location_city</i></h1>
+                    <h5 class="center">Pesquisar organizações</h5>
+                  </div>
+                </div>
+
+                <div class="col s12 m4">
+                  <div class="icon-block" [ngClass]="{'active-search-target': jobSelected }" (click)="heroSelected = false; orgSelected = false; jobSelected = true;">
+                    <h1 class="center primary-txt"><i class="material-icons">work</i></h1>
+                    <h5 class="center">Pesquisar oportunidades</h5>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+          <!--<h4>Campos de pesquisa</h4>-->
+          <h4>Campo de pesquisa</h4>
+          <!-- PESQUISA DE HERÓIS -->
+          <form class="col s12" id="hero-search" *ngIf="heroSelected" (submit)="sendQueryToServer()" enctype="multipart/form-data">
+          <!--<form class="col s12" id="hero-search" *ngIf="heroSelected">-->
+            <div class="row">
+              <div class="input-field col s12">
+                <i class="material-icons prefix">search_center</i>
+                <input id="nameHero" type="text" class="validate" name="parameter" [(ngModel)]="parameter">
+                <label for="nameHero">Pesquisa por nome</label>
+              </div>
+            </div>
+            <!--
+            <div class="row">
+              <div class="input-field col s12">
+                <i class="material-icons prefix">place</i>
+                <input id="location" type="text" class="validate">
+                <label for="location">Localização</label>
+              </div>
+            </div>
+            -->
+            <!--<a>
+              <button [routerLink]="['../Individuals']" class="btn-large primary-hvr">Pesquisar</button>
+            </a>-->
+            <button id="ind-action" type="submit" class="btn waves-effect waves-light btn-lg primary-hvr">Pesquisar</button>
+          </form>
+          <!-- PESQUISA DE ORGANIZAÇÕES -->
+          <form class="col s12" id="org-search" *ngIf="orgSelected" (submit)="sendQueryToServer()" enctype="multipart/form-data">
+          <!--<form class="col s12" id="org-search" *ngIf="orgSelected">-->
+            <div class="row">
+              <div class="input-field col s12">
+                <i class="material-icons prefix">search_center</i>
+                <input id="name" type="text" class="validate" name="parameter" [(ngModel)]="parameter">
+                <label for="name">Pesquisa por nome</label>
+              </div>
+            </div>
+            <!--
+            <div class="row">
+              <div class="input-field col s12">
+                <i class="material-icons prefix">account_balance</i>
+                <input id="type" type="text" class="validate">
+                <label for="type">Tipo de organização</label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s12">
+                <i class="material-icons prefix">build</i>
+                <input id="area" type="text" class="validate">
+                <label for="area">Área de atuação</label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s12">
+                <i class="material-icons prefix">place</i>
+                <input id="location-org" type="text" class="validate">
+                <label for="location-org">Localização</label>
+              </div>
+            </div>
+            -->
+            <!--<a>
+              <button [routerLink]="['../Organizations']" class="btn-large primary-hvr">Pesquisar</button>
+            </a>-->
+            <button id="org-action" type="submit" class="btn waves-effect waves-light btn-lg primary-hvr">Pesquisar</button>
+          </form>
+          <!-- PESQUISA DE OPORTUNIDADES -->
+          <form class="col s12" id="job-search" *ngIf="jobSelected" (submit)="sendQueryToServer()" enctype="multipart/form-data">
+          <!--<form class="col s12" id="job-search" *ngIf="jobSelected">-->
+            <div class="row">
+              <div class="input-field col s12">
+                <i class="material-icons prefix">search_center</i>
+                <input id="title" type="text" class="validate" name="parameter" [(ngModel)]="parameter">
+                <label for="title">Pesquisa por cargo</label>
+              </div>
+            </div>
+            <!--
+            <div class="row">
+              <div class="input-field col s12">
+                <i class="material-icons prefix">school</i>
+                <input id="habs" type="text" class="validate" name="qualifications" [(ngModel)]="qualifications">
+                <label for="habs">Habilitações mínimas</label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s12">
+                <i class="material-icons prefix">place</i>
+                <input id="location-job" type="text" class="validate" name="location" [(ngModel)]="location">
+                <label for="location-job">Local de trabalho</label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s12">
+                <i class="material-icons prefix">build</i>
+                <input id="skills-job" type="text" class="validate" name="skills" [(ngModel)]="skills">
+                <label for="skills-job">Competências necessárias</label>
+              </div>
+            </div>
+            -->
+           <!-- <a>
+              <button [routerLink]="['../Opportunities']" class="btn-large primary-hvr">Pesquisar</button>
+            </a>-->
+            <button id="opp-action" type="submit" class="btn waves-effect waves-light btn-lg primary-hvr">Pesquisar</button>
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </main>
+</div>
+
+<footer class="page-footer">
+  <div class="container">
+    <div class="row">
+      <div class="col l2">
+        <img id="footer-logo" src="assets/img/transp-white.png" alt="Logótipo da plataforma" longdesc="O logótipo é constituído por 9 círculos de tamanhos diferentes mas com a mesma cor. Alguns encontram-se conectados por linhas, num padrão aparentemente aleatório. No centro está um décimo círculo, significativamente maior do que os outros mas também com conexões a outros círculos, com as letras 'IN' inscritas." />
+      </div>
+      <div class="col l5">
+        <h5 id="footer-title" class="white-text">inclusivIN</h5>
+        <p id="footer-description" class="grey-text text-lighten-4">Uma plataforma de emprego para pessoas com deficiência</p>
+        <span id="footer-btn" class="btn tertiary-hvr z-depth-0" [routerLink]="['MoreInfo']">Saber mais</span>
+      </div>
+      <div class="col l4 offset-l1">
+        <h5 class="secondary-txt">Mais informações</h5>
+        <ul id="footer-list">
+          <li><a class="secondary-txt ft-on-hvr" [routerLink]="['Benefits']">Vantagens de contratação</a></li>
+          <li><a class="secondary-txt ft-on-hvr" href="mailto:inescvpintocardoso@gmail.com">Valide a sua conta</a></li>
+          <li><a class="secondary-txt ft-on-hvr" href="mailto:inescvpintocardoso@gmail.com">Dê-nos o seu feedback!</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>

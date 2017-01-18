@@ -1,0 +1,33 @@
+<div id="candidaturas" class="col s12">
+  <form class="col s12">
+    <div class="row">
+      <div class="input-field col s12">
+        <i class="material-icons prefix">search</i>
+        <input id="icon_prefix" type="text" class="validate">
+        <label for="icon_prefix">Pesquisar candidaturas...</label>
+      </div>
+    </div>
+  </form>
+  <ul class="collection" *ngFor="let opportunity of opportunities | async">
+    <div class="collection-item application row" >
+      <div class="col m1 s3 logo-container">
+        <a href="#" title="Abrir página de perfil da organização">
+          <img src="../../assets/img/organization.png" alt="Logótipo da organização. Clique nele para abrir a página de perfil dessa organização." />
+        </a>
+      </div>
+      <div class="col m8 s9">
+        <span class="opportunity-title"> {{opportunity.title}}</span>
+        <p class="opportunity-company">
+          <span class="primary-txt" style="float:right;"><strong>Data limite:</strong> {{opportunity.date}}</span>
+          <a href="#" title="Abrir página de perfil da organização">{{opportunity.company}}</a> - {{opportunity.location}}<br><hr>
+          <span class="muted"><strong>Habilitações mínimas:</strong> {{opportunity.qualifications}}</span><br>
+          <span class="muted"><strong>Competências necessárias:</strong> {{opportunity.skills}}</span>
+        </p>
+      </div>
+      <div class="col m3 s12 center-align opportunity-buttons">
+        <span class="btn primary-hvr" [routerLink]="['ApplicationDetails', {id: opportunity.id}]" routerLinkActive="active">Ver mais informações</span>
+        <span class="btn-flat" (click)="deleteApplication(opportunity.id)">Cancelar candidatura</span>
+      </div>
+    </div>
+  </ul>
+</div>

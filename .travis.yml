@@ -1,0 +1,21 @@
+language: node_js
+env:
+  - CXX=g++-4.8
+addons:
+  apt:
+    sources:
+      - ubuntu-toolchain-r-test
+    packages:
+      - g++-4.8
+node_js:
+  - "4.2.1"
+before_script:
+  - npm install
+script:
+  - npm run build
+  - mocha 'test/**/*.js' --no-deprecation
+notifications:
+  email: false
+  slack:
+    rooms:
+      - ldso31:AWZKJ2ffbhfs3hVTvYGoYF8t#development

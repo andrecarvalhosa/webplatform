@@ -1,0 +1,57 @@
+<div id="perfil" class="col s12">
+  <div class="container">
+    <div class="row first-row">
+      <div class="col s12 m6 l4">
+        <div class="card">
+          <div class="card-image">
+            <img src="../../assets/img/profile/{{profileImage}}" class="profile-pic" alt="Imagem de perfil do utilizador">
+            <span id="profile-username" class="card-title">{{username}}<i class="material-icons right verified-acc-icon" *ngIf="verified_user == 'verified_user'">verified_user</i></span>
+          </div>
+          <div class="card-content" style="line-height: 2em;">
+            <div class="card-action">
+              <button class="waves-effect waves-light btn primary-hvr" style="display:block; margin:auto;" (click)="changeImage()">Alterar foto de perfil</button>
+              <input id="uploadImage" type="file" class="waves-effect waves-light btn primary-hvr" style="display:none;" accept="image/*" (change)="fileChangeEvent($event)" placeholder="Carregar imagem" />
+              <button id="uploadButton" type="button" class="waves-effect waves-light btn primary-hvr"  style="display:none;" (click)="uploadImg()">Carregar</button>
+            </div>
+              <p>
+              <strong class="dark-gray-txt"><i class="material-icons left pers-info-icons">accessible</i> </strong>{{accessible}}<br>
+              <!-- <strong class="dark-gray-txt"><i class="material-icons left pers-info-icons">today</i> </strong>{{age}}<br> -->
+              <strong class="dark-gray-txt"><i class="material-icons left pers-info-icons">place</i> </strong>{{place}}<br>
+              <strong class="dark-gray-txt"><i class="material-icons left pers-info-icons">work</i> </strong>{{work}}<br>
+              <strong class="dark-gray-txt"><i class="material-icons left pers-info-icons">mail</i> </strong>{{mail}}
+            </p>
+          </div>
+          <div class="card-action">
+            <a [routerLink]="['EditPersonalInfo']" class="waves-effect waves-light btn primary-hvr" style="display:block; margin:auto;">Editar dados pessoais </a>
+          </div>
+        </div>
+      </div>
+      <div class="col s12 m6 l8">
+        <div class="card light-gray-bg">
+          <div class="card-content dark-gray-txt">
+            <div class="card-title"><h4 class="tertiary-txt profile-title"><strong>Resumo</strong></h4></div>
+            <pre>
+{{about_me}}
+          </pre>
+          </div>
+          <div class="card-action">
+            <a [routerLink]="['EditAboutMe']" class="waves-effect waves-light btn primary-hvr" style="display:block; margin:auto;">Editar resumo</a>
+          </div>
+        </div>
+      </div>
+      <div class="col s12 m6 l8 first-row">
+        <div class="card light-gray-bg">
+          <div class="card-content dark-gray-txt">
+            <div class="card-title"><h4 class="tertiary-txt profile-title"><strong>Competências</strong></h4></div>
+              <div class="chip" *ngFor="let skill of skills">
+              {{ skill.tag }}
+              </div>
+          </div>
+          <div class="card-action">
+            <a [routerLink]="['EditSkills']" class="waves-effect waves-light btn primary-hvr">Editar competências</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

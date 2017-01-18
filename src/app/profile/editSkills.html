@@ -1,0 +1,13 @@
+<div class="section no-pad-bot" id="index-banner">
+  <div class="row">
+    <div class="col l8 offset-l2 m12">
+      <h3 class="primary-txt">Editar competências profissionais</h3>
+      <p>Escreva as suas competências profissionais no campo abaixo. Depois de cada uma prima "enter". Retire competências clicando na respetiva cruz.</p><br>
+      <form (submit)="setSkills()">
+        <div class="chips chips-initial chips-placeholder"></div>
+        <button id="login-action" type="submit" class="btn waves-effect waves-light btn-lg primary-hvr" style="float:right;">Confirmar alterações</button>
+        <button [routerLink]="['Main']" class="btn waves-effect waves-light btn-flat btn-lg" style="top:40px;margin-right:10px;float:right">Cancelar</button>
+      </form>
+    </div>
+  </div>
+</div>

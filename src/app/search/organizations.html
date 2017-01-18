@@ -1,0 +1,59 @@
+<div class="page-flexbox-wrapper">
+  <header>
+    <div class="navbar-fixed">
+      <nav class="primary-bg" role="navigation">
+        <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo"><img id="navbar-logo" src="../../assets/img/logo_white.png" /></a>
+          <ul class="right hide-on-med-and-down">
+            <li><a [routerLink]="['../Profile']"><i class="material-icons right">account_circle</i>A minha conta</a></li>
+            <li class="active"><a [routerLink]="['../Search']"><i class="material-icons right">search</i>Pesquisa</a></li>
+            <li><a href="/"><i class="material-icons right">exit_to_app</i>Terminar sessão</a></li>
+          </ul>
+
+          <ul id="nav-mobile" class="side-nav">
+            <li><a [routerLink]="['../Profile']">A minha conta</a></li>
+            <li class="active"><a [routerLink]="['../Search']">Pesquisa</a></li>
+            <li><a href="/">Terminar sessão</a></li>
+          </ul>
+          <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <br><br>
+      <div class="col l4 offset-l3 m10 s10">
+        <a [routerLink]="['../Search']" class="waves-effect waves-light btn-flat" id="back-btn"><i class="material-icons left">chevron_left</i>Regressar à página de pesquisa</a>
+      </div>
+      <div class="row">
+        <div class="col s12">
+          <h3 style="margin-bottom:50px;">Resultados da pesquisa</h3>
+          <div class="row">
+          <ul *ngFor="let org of organizations">
+            <a [routerLink]="['../OrgProfile', {id: org.id}]">
+            <div class="col s6 l3">
+              <div class="card" style="cursor: pointer;">
+                <div class="card-image">
+                  <img src="../../assets/img/profile/{{org.photoPath}}" class="profile-pic" alt="Imagem de perfil do utilizador">
+                  <span id="profile-username" class="card-title">{{org.name}}<i class="material-icons right verified-acc-icon" *ngIf="org.validated">verified_user</i></span>
+                </div>
+                <div class="card-content" style="line-height: 2em;">
+                  <p>
+                    <strong class="dark-gray-txt"><i class="material-icons left pers-info-icons">account_balance</i> </strong>{{org.type}}<br>
+                    <strong class="dark-gray-txt"><i class="material-icons left pers-info-icons">build</i> </strong>{{org.field}}<br>
+                    <strong class="dark-gray-txt"><i class="material-icons left pers-info-icons">place</i> </strong>{{org.local}}<br>
+                    <strong class="dark-gray-txt"><i class="material-icons left pers-info-icons">public</i> </strong>{{org.site}}
+                  </p>
+                </div>
+              </div>
+            </div>
+            </a>
+          </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+</div>
