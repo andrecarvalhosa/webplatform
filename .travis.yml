@@ -14,3 +14,4 @@ before_script:
 script:
   - npm run build
   - mocha 'test/**/*.js' --no-deprecation
+  
