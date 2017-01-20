@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+    <title>Heróis Reais - Login</title>
+
+    <!-- CSS  -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu:500,700" rel="stylesheet">
+    <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+</head>
+<body>
+<div class="section no-pad-bot" id="index-banner">
+  <div class="row">
+    <br><br>
+    <div class="col l4 offset-l3 m10 s10">
+      <a href="/" class="waves-effect waves-light btn-flat" id="back-btn"><i class="material-icons left">chevron_left</i>Página inicial</a>
+    </div>
+    <div class="col l4 offset-l4 m10 offset-m1 s10 offset-s1">
+      <h3 class="green-txt">Iniciar sessão</h3>
+      <% if (message.length > 0) { %>
+      <div class="alert alert-danger"><%= message %></div>
+      <% } %>
+      <form action="/login" method="post">
+        <div class="form-group input-field">
+          <label for="email">Email</label>
+          <input type="text" class="form-control" name="email">
+        </div>
+        <div class="form-group input-field">
+          <label>Password</label>
+          <input type="password" class="form-control" name="password">
+        </div>
+
+        <button id="login-action" type="submit" class="btn waves-effect waves-light btn-lg">Login</button>
+      </form>
+
+      <p>Não tem uma conta? <a href="/signup">Registe-se aqui</a></p>
+    </div>
+  </div>
+</div>
+
+<!--  Scripts-->
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="js/materialize.js"></script>
+<script src="js/init.js"></script>
+
+</body>
+</html>

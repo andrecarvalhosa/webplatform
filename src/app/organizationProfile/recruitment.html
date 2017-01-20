@@ -1,0 +1,26 @@
+<div id="recrutamento" class="col s12">
+  <span class="btn-large primary-hvr first-row" [routerLink]="['NewOffer']">Criar nova oferta de emprego</span>
+  <h3 class="first-row" style="margin-bottom:30px;">Ofertas criadas pela empresa</h3>
+  <ul class="collection" *ngFor="let opportunity of opportunities | async">
+    <div class="collection-item application row" style="padding-top:15px;">
+      <div class="col m9 s12">
+        <span class="opportunity-title"> {{opportunity.title}}</span>
+        <p class="opportunity-company">
+          <span style="float:right;"><strong>Data limite:</strong> {{opportunity.date}}</span>
+        </p>
+        <span class="primary-txt" style="padding-bottom:10px;"><strong>Candidatos:</strong> {{opportunity.candidates.length}}/{{opportunity.maxCandidates}}</span>
+        <!-- Not reloading
+        <div *ngFor="let candidate of candidates">
+          <a href="#">
+            <img class="candidate-photo" src="{{candidate.photoPath}}" />
+          </a>
+        </div>
+      -->
+      </div>
+      <div class="col m3 s12 center-align opportunity-buttons">
+        <span class="btn primary-hvr" [routerLink]="['OfferDetails', {id: opportunity.id}]">Ver mais informações</span>
+        <span class="btn-flat" (click)="deleteOffer(opportunity.id)">Cancelar oferta</span>
+      </div>
+    </div>
+  </ul>
+</div>

@@ -1,0 +1,12 @@
+<div class="section no-pad-bot" id="index-banner">
+  <div class="row">
+    <div class="col l8 offset-l2 m12">
+      <h3 class="primary-txt">Editar descrição da empresa</h3>
+      <p>Fale um pouco sobre a empresa, como a sua visão e metas, em que é que consiste, e as razões que podem levar alguém a escolhê-la.</p><br>
+      <form (submit)="setDescription()" >
+      <textarea id="textarea1" class="materialize-textarea" name="description" [(ngModel)]="description"></textarea>        <button id="login-action" type="submit" class="btn waves-effect waves-light btn-lg primary-hvr" style="float:right;">Confirmar alterações</button>
+        <button [routerLink]="['Main']" class="btn waves-effect waves-light btn-flat btn-lg" style="top:40px;margin-right:10px;float:right">Cancelar</button>
+      </form>
+    </div>
+  </div>
+</div>

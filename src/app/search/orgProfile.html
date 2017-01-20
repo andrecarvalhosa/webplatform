@@ -1,0 +1,88 @@
+<header>
+  <div class="navbar-fixed">
+    <nav class="primary-bg" role="navigation">
+      <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo"><img id="navbar-logo" src="../../assets/img/logo_white.png" /></a>
+        <ul class="right hide-on-med-and-down">
+          <li><a [routerLink]="['../Profile']"><i class="material-icons right">account_circle</i>A minha conta</a></li>
+          <li class="active"><a [routerLink]="['../Search']"><i class="material-icons right">search</i>Pesquisa</a></li>
+          <li><a href="/"><i class="material-icons right">exit_to_app</i>Terminar sessão</a></li>
+        </ul>
+
+        <ul id="nav-mobile" class="side-nav">
+          <li><a [routerLink]="['../Profile']">A minha conta</a></li>
+          <li class="active"><a [routerLink]="['../Search']">Pesquisa</a></li>
+          <li><a href="/">Terminar sessão</a></li>
+        </ul>
+        <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<div id="perfil" class="col s12">
+  <div class="container">
+    <div class="row first-row">
+      <div class="col s12 m6 l4">
+        <div class="card">
+          <div class="card-image">
+            <img src="../../assets/img/profile/{{logoImage}}" class="profile-pic" alt="Logo">
+            <span id="profile-username" class="card-title">{{name}}</span>
+          </div>
+          <div class="card-content" style="line-height: 2em;">
+            <p>
+              <strong class="dark-gray-txt"><i class="material-icons left pers-info-icons">account_balance</i></strong>{{type}}<br>
+              <strong class="dark-gray-txt"><i class="material-icons left pers-info-icons">build</i></strong>{{field}}<br>
+              <strong class="dark-gray-txt"><i class="material-icons left pers-info-icons">place</i></strong>{{location}}<br>
+            </p>
+          </div>
+          <div class="card-action" style="line-height: 2em;">
+            <p>
+              <strong class="dark-gray-txt"><i class="material-icons left pers-info-icons">public</i></strong>{{website}}<br>
+              <strong class="dark-gray-txt"><i class="material-icons left pers-info-icons">mail</i></strong>{{mail}}<br>
+              <strong class="dark-gray-txt"><i class="material-icons left pers-info-icons">phone</i></strong>{{telephone}}<br>
+              <strong class="dark-gray-txt"><i class="material-icons left pers-info-icons">place</i></strong>{{address}}
+            </p>
+          </div>
+          <div class="card-action" style="line-height: 2em;">
+            <p>
+              <strong class="dark-gray-txt"><i class="material-icons left pers-info-icons">security</i></strong>{{nif}}
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col s12 m6 l8">
+        <div class="card light-gray-bg">
+          <div class="card-content dark-gray-txt">
+            <div class="card-title"><h4 class="tertiary-txt profile-title"><strong>Sobre a empresa</strong></h4></div>
+            <pre>
+{{description}}
+            </pre>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="page-footer">
+  <div class="container">
+    <div class="row">
+      <div class="col l2">
+        <img id="footer-logo" src="assets/img/transp-white.png" alt="Logótipo da plataforma" longdesc="O logótipo é constituído por 9 círculos de tamanhos diferentes mas com a mesma cor. Alguns encontram-se conectados por linhas, num padrão aparentemente aleatório. No centro está um décimo círculo, significativamente maior do que os outros mas também com conexões a outros círculos, com as letras 'IN' inscritas." />
+      </div>
+      <div class="col l5">
+        <h5 id="footer-title" class="white-text">inclusivIN</h5>
+        <p id="footer-description" class="grey-text text-lighten-4">Uma plataforma de emprego para pessoas com deficiência</p>
+        <span id="footer-btn" class="btn tertiary-hvr z-depth-0" [routerLink]="['MoreInfo']">Saber mais</span>
+      </div>
+      <div class="col l4 offset-l1">
+        <h5 class="secondary-txt">Mais informações</h5>
+        <ul id="footer-list">
+          <li><a class="secondary-txt ft-on-hvr" [routerLink]="['Benefits']">Vantagens de contratação</a></li>
+          <li><a class="secondary-txt ft-on-hvr" href="mailto:inescvpintocardoso@gmail.com">Valide a sua conta</a></li>
+          <li><a class="secondary-txt ft-on-hvr" href="mailto:inescvpintocardoso@gmail.com">Dê-nos o seu feedback!</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>

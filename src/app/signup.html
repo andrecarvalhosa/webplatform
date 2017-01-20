@@ -1,0 +1,84 @@
+  <!DOCTYPE html>
+  <html lang="pt-PT">
+  <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+      <title>Heróis Reais - Registo</title>
+
+      <!-- CSS  -->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Ubuntu:500,700" rel="stylesheet">
+      <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+      <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  </head>
+  <body>
+  <div class="section no-pad-bot" id="index-banner">
+      <div class="row">
+          <br><br>
+          <div class="col l4 offset-l3 m10 s10">
+              <a href="/" class="waves-effect waves-light btn-flat" id="back-btn"><i class="material-icons left">chevron_left</i>Página inicial</a>
+          </div>
+          <div class="col l4 offset-l4 m10 offset-m1 s10 offset-s1">
+              <h3 class="green-txt">Criar conta</h3>
+              <% if (message.length > 0) { %>
+              <div class="alert alert-danger"><%= message %></div>
+              <% } %>
+              <form action="/signup" method="post" enctype="multipart/form-data">
+                  <div class="form-group input-field">
+                      <label>Email</label>
+                      <input type="text" class="form-control" name="email">
+                  </div>
+                  <div class="form-group input-field">
+                      <label>Password</label>
+                      <input type="password" class="form-control" name="password">
+                  </div>
+                  <div class="form-group input-field">
+                      <label>Nome</label>
+                      <input type="text" class="form-control" name="name">
+                  </div>
+                  <div class="form-group input-field">
+                      <label>Idade</label>
+                      <input type="number" class="form-control" name="age">
+                  </div>
+                  <div class="form-group input-field">
+                      <label>Localidade</label>
+                      <input type="text" class="form-control" name="location">
+                  </div>
+                  <div class="form-group input-field">
+                      <label>Número do certificado</label>
+                      <input type="number" class="form-control" name="certificate">
+                  </div>
+                  <div class="form-group input-field">
+                      <label>Incapacidade</label>
+                      <input type="text" class="form-control" name="deficiency">
+                  </div>
+                  <div class="form-group input-field">
+                      <label>Situação profissional</label>
+                      <input type="text" class="form-control" name="situation">
+                  </div>
+                  <div class="form-group input-field">
+              <label for="textarea1">Por que é que sou um herói? Que dificuldades tenho de enfrentar no meu dia-a-dia?</label>
+                      <textarea id="textarea1" class="materialize-textarea" type="text" class="form-control" name="story"></textarea>
+                  </div>
+                  <div class="form-group input-field">
+              <label for="textarea1">Quais são as minhas competências? Em que é que me destaco?</label>
+                      <textarea id="textarea1" class="materialize-textarea" type="text" class="form-control" name="skills"></textarea>
+                  </div>
+                  <div class="form-group">
+                      <label style="font-size:1em;line-height:3em;">Foto de Perfil<br></label>
+                      <input type="file" class="form-control" name="photo" accept="images/*">
+                  </div>
+                  <button id="login-action" type="submit" class="btn waves-effect waves-light btn-lg">Registar</button>
+              </form>
+              <p style="padding-bottom:100px">Já tem uma conta? <a href="/login">Inicie sessão aqui</a></p>
+          </div>
+      </div>
+  </div>
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="js/materialize.js"></script>
+  <script src="js/init.js"></script>
+
+  </body>
+  </html>

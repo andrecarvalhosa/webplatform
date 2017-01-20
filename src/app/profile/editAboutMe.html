@@ -1,0 +1,13 @@
+<div class="section no-pad-bot" id="index-banner">
+  <div class="row">
+    <div class="col l8 offset-l2 m12">
+      <h3 class="primary-txt">Editar resumo pessoal</h3>
+      <p>Aqui pode escrever sobre si. Quem é, o que o/a motiva, por que razões luta e as batalhas que teve de enfrentar.</p><br>
+       <form (submit)="setAbout()">
+        <textarea id="textarea1" class="materialize-textarea" name="about_me" [(ngModel)]="about_me"></textarea>
+        <button id="login-action" type="submit" class="btn waves-effect waves-light btn-lg primary-hvr" style="float:right;">Confirmar alterações</button>
+        <button [routerLink]="['Main']" class="btn waves-effect waves-light btn-flat btn-lg" style="top:40px;margin-right:10px;float:right">Cancelar</button>
+      </form>
+    </div>
+  </div>
+</div>

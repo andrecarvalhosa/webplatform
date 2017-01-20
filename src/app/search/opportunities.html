@@ -1,0 +1,82 @@
+<div class="page-flexbox-wrapper">
+  <header>
+    <div class="navbar-fixed">
+      <nav class="primary-bg" role="navigation">
+        <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo"><img id="navbar-logo" src="../../assets/img/logo_white.png" /></a>
+          <ul class="right hide-on-med-and-down">
+            <li><a [routerLink]="['../Profile']"><i class="material-icons right">account_circle</i>A minha conta</a></li>
+            <li class="active"><a [routerLink]="['../Search']"><i class="material-icons right">search</i>Pesquisa</a></li>
+            <li><a href="/"><i class="material-icons right">exit_to_app</i>Terminar sessão</a></li>
+          </ul>
+
+          <ul id="nav-mobile" class="side-nav">
+            <li><a [routerLink]="['../Profile']">A minha conta</a></li>
+            <li class="active"><a [routerLink]="['../Search']">Pesquisa</a></li>
+            <li><a href="/">Terminar sessão</a></li>
+          </ul>
+          <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <br><br>
+      <div class="col l4 offset-l3 m10 s10">
+        <a [routerLink]="['../Search']" class="waves-effect waves-light btn-flat" id="back-btn"><i class="material-icons left">chevron_left</i>Regressar à página de pesquisa</a>
+      </div>
+      <div class="row">
+        <div class="col s12">
+          <h3 style="margin-bottom:50px;">Resultados da pesquisa</h3>
+          <ul class="collection" *ngFor="let opportunity of opportunities">
+            <div class="collection-item application row" >
+              <div class="col m1 s3 logo-container">
+                <a href="#" title="Abrir página de perfil da organização">
+                  <img src="../../assets/img/organization.png" alt="Logótipo da organização. Clique nele para abrir a página de perfil dessa organização." />
+                </a>
+              </div>
+              <div class="col m8 s9">
+                <span class="opportunity-title"> {{opportunity.title}}</span>
+                <p class="opportunity-company">
+                  <span class="primary-txt" style="float:right;"><strong>Data limite:</strong> {{opportunity.date}}</span>
+                  <a href="#" title="Abrir página de perfil da organização">{{opportunity.company}}</a> - {{opportunity.location}}<br><hr>
+                <span class="muted"><strong>Habilitações mínimas:</strong> {{opportunity.qualifications}}</span><br>
+                <span class="muted"><strong>Competências necessárias:</strong> {{opportunity.skills}}</span>
+                </p>
+              </div>
+              <div class="col m3 s12 center-align opportunity-buttons">
+                <span class="btn primary-hvr" [routerLink]="['OpportunityDetails', {id: opportunity.id}]">Ver mais informações</span>
+                <span class="btn tertiary-hvr" [routerLink]="['Application', {id: opportunity.id}]">Candidate-se aqui</span>
+              </div>
+            </div>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </main>
+</div>
+
+<footer class="page-footer">
+  <div class="container">
+    <div class="row">
+      <div class="col l2">
+        <img id="footer-logo" src="assets/img/transp-white.png" alt="Logótipo da plataforma" longdesc="O logótipo é constituído por 9 círculos de tamanhos diferentes mas com a mesma cor. Alguns encontram-se conectados por linhas, num padrão aparentemente aleatório. No centro está um décimo círculo, significativamente maior do que os outros mas também com conexões a outros círculos, com as letras 'IN' inscritas." />
+      </div>
+      <div class="col l5">
+        <h5 id="footer-title" class="white-text">inclusivIN</h5>
+        <p id="footer-description" class="grey-text text-lighten-4">Uma plataforma de emprego para pessoas com deficiência</p>
+        <span id="footer-btn" class="btn tertiary-hvr z-depth-0" [routerLink]="['MoreInfo']">Saber mais</span>
+      </div>
+      <div class="col l4 offset-l1">
+        <h5 class="secondary-txt">Mais informações</h5>
+        <ul id="footer-list">
+          <li><a class="secondary-txt ft-on-hvr" [routerLink]="['Benefits']">Vantagens de contratação</a></li>
+          <li><a class="secondary-txt ft-on-hvr" href="mailto:inescvpintocardoso@gmail.com">Valide a sua conta</a></li>
+          <li><a class="secondary-txt ft-on-hvr" href="mailto:inescvpintocardoso@gmail.com">Dê-nos o seu feedback!</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>

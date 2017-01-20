@@ -1,0 +1,52 @@
+<div class="section no-pad-bot" id="index-banner">
+  <div class="row">
+    <div class="col l8 offset-l2 m12">
+      <h3 class="primary-txt">Editar dados</h3>
+      <p>Abaixo encontram-se todos os campos que pode editar no perfil da sua empresa. Se não apresentam nenhum valor, então é porque são optativos. Edite apenas os campos que pretende alterar.</p><br>
+       <form  (submit)="setMyProfile()" enctype="multipart/form-data">
+        <div class="form-group input-field">
+          <label for="email">Email</label>
+          <input id="email" type="text" class="form-control" name="email" [(ngModel)]="mail">
+        </div>
+        <div class="form-group input-field">
+          <label for="pass">Password</label>
+          <input id="pass" type="password" class="form-control" name="password" [(ngModel)]="password">
+        </div>
+        <div class="form-group input-field">
+          <label for="name">Nome da empresa</label>
+          <input id="name" type="text" class="form-control" name="name" [(ngModel)]="name">
+        </div>
+        <div class="form-group input-field">
+          <label for="local">Localidade</label>
+          <input id="local" type="text" class="form-control" name="location" [(ngModel)]="location">
+        </div>
+        <div class="form-group input-field">
+          <label for="nif">Número de identificação fiscal (NIF)</label>
+          <input id="nif" type="number" class="form-control" name="nif" [(ngModel)]="nif">
+        </div>
+        <div class="form-group input-field">
+          <label for="type">Tipo de organização</label>
+          <input id="type" type="text" class="form-control" name="type" [(ngModel)]="type">
+        </div>
+        <div class="form-group input-field">
+          <label for="area">Área de atuação</label>
+          <input id="area" type="text" class="form-control" name="field" [(ngModel)]="field">
+        </div>
+        <div class="form-group input-field">
+          <label for="site">Website</label>
+          <input id="site" type="text" class="form-control" name="website" [(ngModel)]="website">
+        </div>
+        <div class="form-group input-field">
+          <label for="address">Morada</label>
+          <input id="address" type="text" class="form-control" name="address" [(ngModel)]="address">
+        </div>
+        <div class="form-group input-field">
+          <label for="phone">Número de telefone</label>
+          <input id="phone" type="number" class="form-control" name="telephone" [(ngModel)]="telephone">
+        </div>
+        <button id="login-action" type="submit" class="btn waves-effect waves-light btn-lg primary-hvr" style="float:right;">Confirmar alterações</button>
+        <button [routerLink]="['Main']" class="btn waves-effect waves-light btn-flat btn-lg" style="top:40px;margin-right:10px;float:right">Cancelar</button>
+      </form>
+    </div>
+  </div>
+</div>

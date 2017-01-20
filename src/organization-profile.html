@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <title>inclusivIN</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu:500,700" rel="stylesheet">
+  <link href="assets/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+</head>
+
+<body>
+<div class="page-flexbox-wrapper">
+
+  <!-- Modal Structure -->
+  <div id="pers-info-modal" class="modal modal-fixed-footer">
+    <div class="modal-content">
+      <h4>Editar dados pessoais</h4>
+      <form action="/signup" method="post" enctype="multipart/form-data">
+        <div class="form-group input-field">
+          <label>Email</label>
+          <input type="text" class="form-control" name="email">
+        </div>
+        <div class="form-group input-field">
+          <label>Password</label>
+          <input type="password" class="form-control" name="password">
+        </div>
+        <div class="form-group input-field">
+          <label>Nome</label>
+          <input type="text" class="form-control" name="name">
+        </div>
+        <div class="form-group input-field">
+          <label>Tipo de organização</label>
+          <input type="text" class="form-control" name="type">
+        </div>
+        <div class="form-group input-field">
+          <label>Localidade</label>
+          <input type="text" class="form-control" name="location">
+        </div>
+        <div class="form-group input-field">
+          <label>NIF</label>
+          <input type="number" class="form-control" name="nif">
+        </div>
+        <div class="form-group input-field">
+          <label>Área de atuação</label>
+          <input type="text" class="form-control" name="area">
+        </div>
+        <div class="form-group input-field">
+          <label>Número de telefone</label>
+          <input type="number" class="form-control" name="phone">
+        </div>
+        <div class="form-group input-field">
+          <label>Site</label>
+          <input type="text" class="form-control" name="site">
+        </div>
+        <div class="form-group">
+          <label style="font-size:1em;line-height:3em;">Foto de Perfil<br></label>
+          <input type="file" class="form-control" name="photo" accept="images/*">
+        </div>
+      </form>
+    </div>
+    <div class="modal-footer">
+      <a href="#" class="modal-action modal-close waves-effect waves-green btn primary-hvr ">Aceitar</a>
+      <a href="#" class="modal-action modal-close waves-effect waves-green btn-flat ">Cancelar</a>
+    </div>
+  </div>
+
+  <!-- Modal Structure -->
+  <div id="about-me-modal" class="modal modal-fixed-footer">
+    <div class="modal-content">
+      <h4>Editar visão da empresa</h4>
+      <form action="/signup" method="post" enctype="multipart/form-data">
+        <div class="form-group input-field">
+          <label for="textarea1">Quais são os valores, princípios e objetivos da organização? A que se destina?</label>
+          <textarea id="textarea1" class="materialize-textarea" type="text" class="form-control" name="story"></textarea>
+        </div>
+      </form>
+    </div>
+    <div class="modal-footer">
+      <a href="#" class="modal-action modal-close waves-effect waves-green btn primary-hvr ">Aceitar</a>
+      <a href="#" class="modal-action modal-close waves-effect waves-green btn-flat ">Cancelar</a>
+    </div>
+  </div>
+
+  <header>
+    <ul id="dropdown1" class="dropdown-content">
+      <li><a href="#">Perfil</a></li>
+      <li><a href="#">Recrutamento</a></li>
+    </ul>
+    <div class="navbar-fixed">
+      <nav class="primary-bg" role="navigation">
+        <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo"><img id="navbar-logo" src="assets/img/logo_white.png" /></a>
+          <ul class="right hide-on-med-and-down">
+            <li class="active"><a class="dropdown-button" href="#" data-activates="dropdown1"><i class="material-icons right">domain</i>Conta da empresa</a></li>
+            <li><a href="#"><i class="material-icons right">message</i>Mensagens</a></li>
+            <li><a href="#"><i class="material-icons right">search</i>Pesquisa</a></li>
+            <li><a href="/logout"><i class="material-icons right">exit_to_app</i>Terminar sessão</a></li>
+          </ul>
+
+          <ul id="nav-mobile" class="side-nav">
+            <li class="active"><a href="#">Conta da empresa</a></li>
+            <li><a href="#">Mensagens</a></li>
+            <li><a href="#">Pesquisa</a></li>
+            <li><a href="/logout">Terminar sessão</a></li>
+          </ul>
+          <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <div class="col s12">
+        <ul class="tabs">
+          <li class="tab col s3"><a class="inactive active" href="#perfil">Perfil</a></li>
+          <li class="tab col s3"><a class="inactive" href="#recrutamento">Recrutamento</a></li>
+        </ul>
+      </div>
+
+      <div id="perfil" class="col s12">
+        <div class="container">
+          <div class="row first-row">
+            <div class="col s12 m6 l4">
+              <div class="card">
+                <div class="card-image">
+                  <img src="assets/img/organization.png" class="profile-pic">
+                  <span id="profile-username" class="card-title">Placeholder</span>
+                </div>
+                <div class="card-content" style="line-height: 2em;">
+                  <p>
+                    <strong class="dark-gray-txt"><i class="material-icons left">place</i> </strong>Porto, Portugal<br>
+                    <strong class="dark-gray-txt"><i class="material-icons left">location_city</i> </strong>Tipo de organização<br>
+                    <strong class="dark-gray-txt"><i class="material-icons left">build</i> </strong>Área de atuação<br>
+                    <strong class="dark-gray-txt"><i class="material-icons left">phone</i> </strong>222222222<br>
+                    <strong class="dark-gray-txt"><i class="material-icons left">mail</i> </strong>E-mail<br>
+                    <strong class="dark-gray-txt"><i class="material-icons left">link</i> </strong>Site corporativo<br>
+                  </p>
+                </div>
+                <div class="card-action">
+                  <a class="waves-effect waves-light btn modal-trigger primary-hvr" href="#pers-info-modal">Editar</a>
+                </div>
+              </div>
+            </div>
+            <div class="col s12 m6 l8">
+              <div class="card light-gray-bg">
+                <div class="card-content dark-gray-txt">
+                  <span class="card-title green-txt"><strong>Sobre a empresa</strong></span>
+                  <p>Placeholder</p>
+                </div>
+                <div class="card-action">
+                  <a class="waves-effect waves-light btn modal-trigger primary-hvr" href="#about-me-modal">Editar</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="recrutamento" class="col s12">
+        TODO
+      </div>
+    </div>
+
+    <!--
+    <div class="container">
+        <div class="section">
+            <div class="row">
+                <div class="col s12 m4">
+                    <div class="icon-block">
+                        <h2 class="center light-blue-text"><i class="material-icons">flash_on</i></h2>
+                        <h5 class="center">Speeds up development</h5>
+
+                        <p class="light">We did most of the heavy lifting for you to provide a default stylings that incorporate our custom components. Additionally, we refined animations and transitions to provide a smoother experience for developers.</p>
+                    </div>
+                </div>
+
+                <div class="col s12 m4">
+                    <div class="icon-block">
+                        <h2 class="center light-blue-text"><i class="material-icons">group</i></h2>
+                        <h5 class="center">User Experience Focused</h5>
+
+                        <p class="light">By utilizing elements and principles of Material Design, we were able to create a framework that incorporates components and animations that provide more feedback to users. Additionally, a single underlying responsive system across all platforms allow for a more unified user experience.</p>
+                    </div>
+                </div>
+
+                <div class="col s12 m4">
+                    <div class="icon-block">
+                        <h2 class="center light-blue-text"><i class="material-icons">settings</i></h2>
+                        <h5 class="center">Easy to work with</h5>
+
+                        <p class="light">We have provided detailed documentation as well as specific code examples to help new users get started. We are also always open to feedback and can answer any questions a user may have about Materialize.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <br><br>
+
+        <div class="section">
+
+        </div>
+    </div>
+    -->
+  </main>
+</div>
+
+<footer class="page-footer">
+  <div class="container">
+    <div class="row">
+      <div class="col l6 s12">
+        <h5 class="white-text">inclusivIN</h5>
+        <p class="grey-text text-lighten-4">Uma plataforma de emprego para pessoas com deficiência</p>
+      </div>
+      <div class="col l3 s12">
+        <h5 class="white-text">Mapa do site</h5>
+        <ul>
+          <li><a class="white-text" href="#">Perfil</a></li>
+          <li><a class="white-text" href="#">Recrutamento</a></li>
+          <li><a class="white-text" href="#">Mensagens</a></li>
+          <li><a class="white-text" href="#">Pesquisa</a></li>
+        </ul>
+      </div>
+      <div class="col l3 s12">
+        <h5 class="white-text">Mais informações</h5>
+        <ul>
+          <li><a class="white-text" href="#">Sobre a plataforma</a></li>
+          <li><a class="white-text" href="#">Como contribuir</a></li>
+          <li><a class="white-text" href="#">Ajuda</a></li>
+          <li><a class="white-text" href="#">Dê-nos o seu feedback!</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- NÃO ESTÁ A FUNCIONAR, tenho de ver o q se passa -João
+  <div class="footer-copyright">
+    <div class="container">
+      Em caso de problemas contacte-nos enviando mail para <a class="text-lighten-3" href="#">mail@mail.mail</a>
+    </div>
+  </div>
+  -->
+</footer>
+
+
+<!--  Scripts-->
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="assets/js/materialize.js"></script>
+<script src="assets/js/init.js"></script>
+<script>
+  $(document).ready(function() {
+    $('.modal-trigger').leanModal();
+  });
+</script>
+
+</body>
+</html>

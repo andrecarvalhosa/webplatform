@@ -1,0 +1,51 @@
+<div class="section no-pad-bot" id="index-banner">
+  <div class="row">
+    <div class="col l8 offset-l2 m12">
+      <h3 class="primary-txt">Criar oferta de emprego</h3>
+      <form (submit)="createOffer()">
+        <div class="form-group input-field">
+          <label>Título</label>
+          <input type="text" class="form-control" name="title" [(ngModel)]="title">
+        </div>
+        <div class="form-group input-field">
+          <label>Descrição</label>
+          <textarea id="description" class="materialize-textarea" [(ngModel)]="description"></textarea>
+        </div>
+        <div class="form-group input-field">
+          <label>Localidade</label>
+          <input type="text" class="form-control" name="location" [(ngModel)]="location">
+        </div>
+        <div class="form-group input-field">
+          <label class="active">Data limite de candidaturas</label>
+          <input type="date" class="datepicker form-control" name="date" [(ngModel)]="date">
+        </div>
+        <div class="form-group input-field">
+          <label>Habilitações necessárias</label>
+          <textarea id="qualifications" class="materialize-textarea" [(ngModel)]="qualifications"></textarea>
+        </div>
+        <div class="form-group input-field">
+          <label>Competências desejadas</label>
+          <textarea id="skills" class="materialize-textarea" [(ngModel)]="skills"></textarea>
+        </div>
+        <div class="form-group input-field">
+          <label>Benefícios</label>
+          <textarea id="benefits" class="materialize-textarea" [(ngModel)]="benefits"></textarea>
+        </div>
+        <div class="form-group input-field">
+          <label>Deseja que os candidatos lhe dêem alguma informação extra? Escreva aqui instruções sobre o que pretende.</label>
+          <input type="text" class="form-control" name="motivationLetter" [(ngModel)]="motivationLetter">
+        </div>
+        <div class="form-group input-field">
+          <label>Número máximo de candidatos</label>
+          <input type="number" class="form-control" name="maxCandidates" [(ngModel)]="maxCandidates">
+        </div>
+        <div class="form-group input-field">
+          <label>Número de vagas</label>
+          <input type="number" class="form-control" name="amountNeeded" [(ngModel)]="amountNeeded">
+        </div>
+        <button id="login-action" type="submit" class="btn waves-effect waves-light btn-lg primary-hvr" style="float:right;">Criar oferta de emprego</button>
+        <button [routerLink]="['Recruitment']" class="btn waves-effect waves-light btn-flat btn-lg" style="top:40px;margin-right:10px;float:right">Cancelar</button>
+      </form>
+    </div>
+  </div>
+</div>

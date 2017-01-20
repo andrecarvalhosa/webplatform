@@ -1,0 +1,57 @@
+<div class="section no-pad-bot" id="index-banner">
+  <div class="row">
+    <br><br>
+    <div class="col l4 offset-l3 m10 s10">
+      <a [routerLink]="['../Signup']" class="waves-effect waves-light btn-flat" id="back-btn"><i class="material-icons left">chevron_left</i>Retroceder</a>
+    </div>
+    <div class="col l4 offset-l4 m10 offset-m1 s10 offset-s1">
+      <h3>Criação de conta de organização</h3>
+      <form (submit)="postDataToServer()" enctype="multipart/form-data">
+        <div class="form-group input-field">
+          <label for="email">Email</label>
+          <input id="email" type="text" class="form-control" name="email" [(ngModel)]="email">
+        </div>
+        <div class="form-group input-field">
+          <label for="pass">Password</label>
+          <input id="pass" type="password" class="form-control" name="password" [(ngModel)]="password">
+        </div>
+        <div class="form-group input-field">
+          <label for="name">Nome da organização</label>
+          <input id="name" type="text" class="form-control" name="name" [(ngModel)]="name">
+        </div>
+        <div class="form-group input-field">
+          <label for="nif">Número de Identificação Fiscal (NIF)</label>
+          <input id="nif" type="number" class="form-control" name="nif" [(ngModel)]="nif">
+        </div>
+        <div class="form-group input-field">
+          <label for="local">Localidade da sede</label>
+          <input id="local" type="text" class="form-control" name="location" [(ngModel)]="hqLocality">
+        </div>
+        <div class="form-group input-field">
+          <label for="type">Tipo de organização</label>
+          <input id="type" type="text" class="form-control" name="orgType" [(ngModel)]="orgType">
+        </div>
+        <div class="form-group input-field">
+          <label for="area">Área profissional da organização</label>
+          <input id="area" type="text" class="form-control" name="industryField" [(ngModel)]="industryField">
+        </div>
+        <!--
+        <div class="form-group">
+          <div class="file-field input-field">
+            <div class="btn tertiary-hvr">
+              <span>Carregar logótipo da empresa</span>
+              <input type="file" class="form-control" name="photo" accept="images/*">
+            </div>
+            <div class="file-path-wrapper">
+              <input class="file-path validate" type="text">
+            </div>
+          </div>
+          <!--<label style="font-size:1em;line-height:3em;">Logo da empresa<br></label>
+          <input type="file" class="form-control" name="photo" accept="images/*">
+        </div> -->
+        <button id="login-action" type="submit" class="btn waves-effect waves-light btn-lg primary-hvr">Concluir registo</button>
+      </form>
+      <p style="padding-bottom:100px">Já tem uma conta? <a [routerLink]="['../Login']" >Inicie sessão aqui</a></p>
+    </div>
+  </div>
+</div>
