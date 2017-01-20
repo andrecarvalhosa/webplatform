@@ -14,8 +14,3 @@ before_script:
 script:
   - npm run build
   - mocha 'test/**/*.js' --no-deprecation
-notifications:
-  email: false
-  slack:
-    rooms:
-      - ldso31:AWZKJ2ffbhfs3hVTvYGoYF8t#development
